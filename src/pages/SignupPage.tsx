@@ -44,6 +44,12 @@ export function SignupPage() {
           lessonsCompleted: 0,
           perfectLessons: 0,
           achievements: [],
+          gems: 100,
+          lingots: 0,
+          hearts: 5,
+          streakFreezes: 0,
+          currentLeague: 'bronze',
+          leagueRank: 0,
         })
         navigate('/')
       } else {

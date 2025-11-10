@@ -1,16 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
 
 @import "tailwindcss";
 
 body {
   min-height: 100vh;
-  font-family: Inter, system-ui, sans-serif;
-  color: #111827;
+  font-family: 'Nunito', system-ui, sans-serif;
+  color: #4b5563;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to bottom right, #eff6ff, #ffffff, #faf5ff);
+  background: linear-gradient(180deg, #d7f8e8 0%, #ffffff 100%);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fun button styles */
+.duo-button {
+  position: relative;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.1s ease;
+}
+
+.duo-button:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+/* Shake animation for wrong answers */
+@keyframes shake-horizontal {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.shake-it {
+  animation: shake-horizontal 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* Confetti container */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
 }
